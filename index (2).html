@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="lock-scroll">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Happy Birthday ❤️ | A Little Gift For You</title>
+<meta name="description" content="A birthday surprise, made just for you.">
+<meta name="theme-color" content="#2B1620">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E">
+
+<!-- Fonts: Cormorant Garamond (display), Jost (body), Parisienne (signature/script accents) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- =========================================================
+     OPENING SCREEN — the "envelope". Locks scroll until opened.
+     ========================================================= -->
+<div id="openingScreen" class="opening-screen">
+  <div class="opening-glow" aria-hidden="true"></div>
+  <div id="ambientHearts" class="ambient-hearts" aria-hidden="true"></div>
+
+  <div class="opening-content">
+    <p class="opening-eyebrow">something special is waiting for you</p>
+
+    <div class="envelope" id="envelope">
+      <div class="envelope-back"></div>
+      <div class="envelope-flap" id="envelopeFlap" aria-hidden="true"></div>
+      <button class="wax-seal" id="openBtn" aria-label="Open your birthday surprise">
+        <span class="wax-seal-heart">❤</span>
+      </button>
+      <div class="envelope-shadow" aria-hidden="true"></div>
+    </div>
+
+    <p class="opening-hint">tap the seal to open</p>
+  </div>
+</div>
+
+<!-- =========================================================
+     MAIN CONTENT
+     ========================================================= -->
+<main id="mainContent">
+
+  <!-- 1. HERO -->
+  <section id="hero" class="section section--dark hero" aria-label="Happy Birthday">
+    <div class="hero-inner">
+      <p class="eyebrow eyebrow--light">a birthday, just for you</p>
+      <h1 class="hero-title">Happy Birthday Catherine Elize Erison  <span aria-hidden="true">❤️</span></h1>
+      <p class="hero-date">09 September</p>
+      <p class="hero-line" id="heroTypingText" aria-live="polite"></p>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- 2. PERSONAL MESSAGE -->
+  <section id="message" class="section section--light message-section" aria-label="A letter for you">
+    <p class="eyebrow">a little note</p>
+    <div class="note-card reveal">
+      <p class="note-greeting font-script">Hi Sayangku,</p>
+      <p class="note-body"> Pertama sekali saya mau ucapkan happy birthday to the most unexpected person that come into my life. Sorry kalo saya banyak susahkan kamu. Saya banyak terhutang budi sama kamu sebenarnya. kamu bnyak tolong saya. Mungkin suatu hari nnti saya dapat bayar jasa kamu. Sorry juga kalo saya banyak sakitkan hati kamu selama kita kenal.</p>
+      <p class="note-body"> Saya pun tak tau mau buat apa sebenarny untuk birthday kamu. Jadi ini ja yg terlintas dalam fikiran saya untuk buat macam ni.</p>
+      <p class="note-body"> Saya harap kita dapat terus belajar faham satu sama lain. Saya tak mau janji apa-apa yg besar, tapi saya akan cuba jadi lebih baik. </p>
+      <p class="note-signature font-script">Ikhlas dari hati,<br> Nath </p>
+    </div>
+  </section>
+
+  <!-- 3. MEMORY GALLERY -->
+  <section id="gallery" class="section section--light gallery-section" aria-label="Memories we've made">
+    <p class="eyebrow">memories we've made</p>
+    <h2 class="section-title">A Few of My Favorites Pictures Hehehe</h2>
+    <div class="gallery-grid">
+      <button class="gallery-item reveal" data-index="0" aria-label="Open photo 1">
+        <img src="image/photo6.jpg" alt="A memory together — photo 1" loading="lazy">
+      </button>
+      <button class="gallery-item reveal" data-index="1" aria-label="Open photo 2">
+        <img src="image/photo2.jpg" alt="A memory together — photo 2" loading="lazy">
+      </button>
+      <button class="gallery-item reveal" data-index="2" aria-label="Open photo 3">
+        <img src="image/photo3.jpg" alt="A memory together — photo 3" loading="lazy">
+      </button>
+      <button class="gallery-item reveal" data-index="3" aria-label="Open photo 4">
+        <img src="image/photo4.jpg" alt="A memory together — photo 4" loading="lazy">
+      </button>
+      <button class="gallery-item reveal" data-index="4" aria-label="Open photo 5">
+        <img src="image/photo5.jpg" alt="A memory together — photo 5" loading="lazy">
+      </button>
+      <button class="gallery-item reveal" data-index="5" aria-label="Open photo 6">
+        <img src="image/photo1.jpg" alt="A memory together — photo 6" loading="lazy">
+      </button>
+    </div>
+  </section>
+
+  <!-- 4. THINGS I LOVE ABOUT YOU -->
+  <section id="love" class="section section--light love-section" aria-label="Things I love about you">
+    <p class="eyebrow">things I've noticed</p>
+    <h2 class="section-title">Things I Love About You</h2>
+    <div class="love-grid">
+      <div class="love-card reveal">
+        <span class="love-icon" aria-hidden="true">❤️</span>
+        <h3>Your smile</h3>
+        <p>The one that somehow makes everything feel lighter.</p>
+      </div>
+      <div class="love-card reveal">
+        <span class="love-icon" aria-hidden="true">❤️</span>
+        <h3>Your kindness</h3>
+        <p>The way you show up for people, quietly, without asking for anything back.</p>
+      </div>
+      <div class="love-card reveal">
+        <span class="love-icon" aria-hidden="true">❤️</span>
+        <h3>The way you care</h3>
+        <p>You notice the little things most people miss.</p>
+      </div>
+      <div class="love-card reveal">
+        <span class="love-icon" aria-hidden="true">❤️</span>
+        <h3>Your laugh</h3>
+        <p>Honestly, one of my favorite sounds.</p>
+      </div>
+      <div class="love-card reveal">
+        <span class="love-icon" aria-hidden="true">❤️</span>
+        <h3>Ordinary days made special</h3>
+        <p>Somehow, being around you turns nothing days into good ones.</p>
+      </div>
+      <div class="love-card reveal">
+        <span class="love-icon" aria-hidden="true">❤️</span>
+        <h3>Just... you</h3>
+        <p>All of it. Every part.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SPECIAL SURPRISE -->
+  <section id="surprise" class="section section--dark surprise-section" aria-label="One more surprise">
+    <div id="ambientHeartsSurprise" class="ambient-hearts" aria-hidden="true"></div>
+    <p class="eyebrow eyebrow--light">one more thing</p>
+    <h2 class="section-title section-title--light">There's a little more...</h2>
+    <button id="surpriseBtn" class="btn-seal">One More Surprise...</button>
+    <div id="surpriseMessage" class="surprise-message hidden">
+      <p>"No matter where life takes us, I hope you always remember that you deserve happiness, love, and beautiful moments — today and always."</p>
+    </div>
+  </section>
+
+  <!-- 6. COUNTDOWN / BIRTHDAY DATE -->
+  <section id="countdown" class="section section--light countdown-section" aria-label="Birthday countdown">
+    <p class="eyebrow">the big day</p>
+    <h2 class="section-title">09 September</h2>
+
+    <div id="countdownActive" class="countdown-active hidden">
+      <p class="countdown-lead">Counting down to your day</p>
+      <div class="countdown-grid">
+        <div class="countdown-box"><span id="cdDays">00</span><small>Days</small></div>
+        <div class="countdown-box"><span id="cdHours">00</span><small>Hours</small></div>
+        <div class="countdown-box"><span id="cdMinutes">00</span><small>Minutes</small></div>
+        <div class="countdown-box"><span id="cdSeconds">00</span><small>Seconds</small></div>
+      </div>
+    </div>
+
+    <div id="countdownToday" class="countdown-today hidden">
+      <p class="today-message">TODAY IS YOUR DAY! 🎂❤️</p>
+    </div>
+
+    <div id="countdownPast" class="countdown-past hidden">
+      <p class="past-message">🎉 Happy Birthday! I hope your day was absolutely wonderful. ❤️</p>
+    </div>
+  </section>
+
+  <!-- 7. FINAL MESSAGE -->
+  <section id="final" class="section section--dark final-section" aria-label="Final message">
+    <div id="ambientHeartsFinal" class="ambient-hearts" aria-hidden="true"></div>
+    <p class="eyebrow eyebrow--light">before you go</p>
+    <h2 class="final-title">Before you leave...</h2>
+    <p class="final-body">If today gets busy, or loud, or ordinary in the way days sometimes do — I hope somewhere in it, you pause for a second and just feel how loved you are. Because you are. More than you probably realize.</p>
+    <p class="final-signoff font-script">Happy Birthday, Catherineku sayang ❤️</p>
+    <p class="final-signature font-script">With love,<br> Nath </p>
+  </section>
+
+</main>
+
+<!-- =========================================================
+     LIGHTBOX (fullscreen photo viewer)
+     ========================================================= -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close photo">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8249;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">&#8250;</button>
+</div>
+
+<!-- =========================================================
+     FLOATING MUSIC PLAYER
+     ========================================================= -->
+<div class="music-player" id="musicPlayer">
+  <audio id="bgMusic" src="image/music.mp3" loop preload="none"></audio>
+  <div class="music-tooltip" id="musicTooltip">tap for music 🎵</div>
+  <button id="musicToggle" class="music-btn" aria-label="Play music" aria-pressed="false">
+    <svg class="icon-play" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+    <svg class="icon-pause" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" hidden><path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor"/></svg>
+  </button>
+  <button id="muteToggle" class="mute-btn" aria-label="Mute" aria-pressed="false">
+    <svg class="icon-vol" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 10v4h4l5 5V5L7 10H3z" fill="currentColor"/></svg>
+    <svg class="icon-mute" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" hidden><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2 2.5 2.5 1.4-1.4L18 12l1.9-1.9-1.4-1.4L16 11l-1.5-1.5-1.4 1.4L14.6 12l-1.5 1.5 1.4 1.4z" fill="currentColor"/></svg>
+  </button>
+</div>
+
+<!-- Confetti + heart burst are spawned into these containers by script.js -->
+<div class="confetti-container" id="confettiContainer" aria-hidden="true"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
