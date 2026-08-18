@@ -196,7 +196,7 @@ function initGalleryLightbox() {
   });
 }
 
-/* ============ 7. SURPRISE: CONFETTI + HEART BURST ============ */
+/* ============ 7. SURPRISE: CONFETTI + ROSE BURST ============ */
 function spawnConfetti() {
   const container = document.getElementById('confettiContainer');
   if (!container || REDUCED_MOTION) return;
@@ -218,31 +218,36 @@ function spawnConfetti() {
   }
 }
 
-function spawnHeartBurst() {
+function spawnRoseBurst() {
   const container = document.getElementById('confettiContainer');
   if (!container || REDUCED_MOTION) return;
 
   for (let i = 0; i < 18; i++) {
-    const heart = document.createElement('span');
-    heart.className = 'heart-burst-piece';
-    heart.textContent = '❤';
-    heart.style.left = (30 + Math.random() * 40) + '%';
-    heart.style.setProperty('--driftx', (Math.random() * 160 - 80) + 'px');
-    heart.style.animationDuration = (2 + Math.random() * 1.4) + 's';
-    heart.style.animationDelay = (Math.random() * 0.3) + 's';
-    container.appendChild(heart);
-    heart.addEventListener('animationend', () => heart.remove());
+    const rose = document.createElement('span');
+    rose.className = 'rose-burst-piece';
+    rose.textContent = '🌹';
+    rose.style.left = (30 + Math.random() * 40) + '%';
+    rose.style.setProperty('--driftx', (Math.random() * 160 - 80) + 'px');
+    rose.style.animationDuration = (2 + Math.random() * 1.4) + 's';
+    rose.style.animationDelay = (Math.random() * 0.3) + 's';
+    container.appendChild(rose);
+    rose.addEventListener('animationend', () => rose.remove());
   }
 }
 
 function initSurprise() {
   const btn = document.getElementById('surpriseBtn');
+  const rose = document.getElementById('surpriseRose');
   const message = document.getElementById('surpriseMessage');
   if (!btn || !message) return;
 
   btn.addEventListener('click', () => {
     spawnConfetti();
-    spawnHeartBurst();
+    spawnRoseBurst();
+    if (rose) {
+      rose.classList.remove('hidden');
+      requestAnimationFrame(() => rose.classList.add('is-visible'));
+    }
     message.classList.remove('hidden');
     requestAnimationFrame(() => message.classList.add('is-visible'));
   });

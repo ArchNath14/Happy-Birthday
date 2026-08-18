@@ -17,6 +17,8 @@
   --color-text-soft: #7A5C66;
   --color-cream: #FFF8F3;       /* text on dark backgrounds            */
   --color-card: #FFFFFF;
+  --color-leaf: #5C7A52;        /* stem/leaf green — rose illustration */
+  --color-leaf-light: #6B8F5E;
 
   --gradient-dark: linear-gradient(160deg, #2B1620 0%, #46223A 55%, #6B2737 100%);
   --gradient-light: linear-gradient(180deg, #FBEDE9 0%, #FFF8F3 100%);
@@ -460,7 +462,8 @@ button:focus-visible,
 }
 
 .gallery-item:nth-child(3n+1) { grid-column: span 1; }
-.gallery-item:first-child {
+.gallery-item:first-child,
+.gallery-item:last-child {
   grid-column: span 2;
   aspect-ratio: 2 / 1.1;
 }
@@ -520,45 +523,31 @@ button:focus-visible,
 .lightbox-next { right: 12px; }
 
 /* =============================================================
-   THINGS I LOVE
-   ============================================================= */
-.love-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  max-width: 600px;
-  width: 100%;
-}
-
-.love-card {
-  background: var(--color-card);
-  border-radius: var(--radius-md);
-  padding: 22px 14px;
-  box-shadow: var(--shadow-soft);
-  transition-delay: calc(var(--i, 0) * 0.08s);
-}
-.love-card:nth-child(1) { --i: 1; }
-.love-card:nth-child(2) { --i: 2; }
-.love-card:nth-child(3) { --i: 3; }
-.love-card:nth-child(4) { --i: 4; }
-.love-card:nth-child(5) { --i: 5; }
-.love-card:nth-child(6) { --i: 6; }
-
-.love-icon { font-size: 1.4rem; display: block; margin-bottom: 8px; }
-
-.love-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  color: var(--color-primary);
-  margin-bottom: 6px;
-}
-
-.love-card p { font-size: 0.85rem; color: var(--color-text-soft); }
-
-/* =============================================================
    SURPRISE
    ============================================================= */
 .surprise-section { gap: 4px; }
+
+.surprise-rose {
+  position: relative;
+  z-index: 1;
+  width: 150px;
+  margin: 30px auto 0;
+  opacity: 0;
+  transform: scale(0.4) rotate(-8deg);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  filter: drop-shadow(0 14px 22px rgba(20, 8, 14, 0.45));
+}
+.surprise-rose.is-visible {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  animation: rose-sway 4.5s ease-in-out 0.9s infinite;
+}
+.rose-illustration { width: 100%; height: auto; overflow: visible; display: block; }
+
+@keyframes rose-sway {
+  0%, 100% { transform: scale(1) rotate(-2deg); }
+  50%      { transform: scale(1) rotate(2deg); }
+}
 
 .btn-seal {
   position: relative;
@@ -595,6 +584,7 @@ button:focus-visible,
   transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
 }
 .surprise-message.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+.surprise-message p + p { margin-top: 14px; }
 
 /* =============================================================
    COUNTDOWN
@@ -748,15 +738,15 @@ button:focus-visible,
   to { transform: translateY(105vh) rotate(var(--rot, 360deg)); opacity: 0; }
 }
 
-.heart-burst-piece {
+.rose-burst-piece {
   position: absolute;
   bottom: 6%;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--color-primary-light);
-  animation: heart-burst-rise ease-out forwards;
+  animation: rose-burst-rise ease-out forwards;
 }
 
-@keyframes heart-burst-rise {
+@keyframes rose-burst-rise {
   0%   { transform: translate(0, 0) scale(0.6); opacity: 1; }
   100% { transform: translate(var(--driftx, 0), -60vh) scale(1.1); opacity: 0; }
 }
@@ -768,9 +758,8 @@ button:focus-visible,
   .section { padding: 120px 40px; }
 
   .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-  .gallery-item:first-child { grid-column: span 1; aspect-ratio: 1/1; }
-
-  .love-grid { grid-template-columns: repeat(3, 1fr); }
+  .gallery-item:first-child,
+  .gallery-item:last-child { grid-column: span 1; aspect-ratio: 1/1; }
 
   .note-card { padding: 56px 48px; }
 
@@ -784,6 +773,5 @@ button:focus-visible,
   .hero-title { font-size: 4.5rem; }
   .note-card { max-width: 620px; }
   .gallery-grid { max-width: 720px; }
-  .love-grid { max-width: 760px; }
   .final-body { max-width: 560px; }
 }
